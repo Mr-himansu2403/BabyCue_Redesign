@@ -17,20 +17,39 @@ NAVIGATION
 ============================================================ -->
 <nav class="nav" id="mainNav">
 <div class="nav-inner">
-<a href="#" class="nav-logo">
+<a href="#hero" class="nav-logo">
 <img src="assets/images/Logo_BabyCue.png" alt="BabyCue Logo" class="nav-logo-img">
 </a>
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#diacue">DiaCue</a></li>
-<li><a href="#gibud">GI-BUD App</a></li>
-<li><a href="#technology">Technology</a></li>
-<li><a href="#research">Research</a></li>
-<li><a href="#contact">Contact</a></li>
+<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#hero" class="nav-link">Home</a></li>
+<li><a href="#about" class="nav-link">About</a></li>
+<li class="nav-dropdown">
+<a href="#" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+Product
+<svg class="nav-dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="currentColor">
+<path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
+</a>
+<ul class="nav-dropdown-menu">
+<li><a href="#growgut" class="nav-dropdown-item">GrowGut</a></li>
+<li><a href="#diacue" class="nav-dropdown-item">DiaCue</a></li>
+<li><a href="#gibud" class="nav-dropdown-item">GI-BUD</a></li>
+</ul>
+</li>
+<li><a href="#technology" class="nav-link">Technology</a></li>
+<li><a href="#research" class="nav-link">Achievements</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+<li class="nav-cta-mobile">
+<a href="#partner" class="btn btn-primary btn-block">Partner With Us</a>
+</li>
 </ul>
 <div class="nav-cta">
-<a href="#research" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Partner With Us</a>
-<a href="#gibud" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Get GI-BUD<span class="btn-icon">↗</span></a>
+<a href="#partner" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Partner With Us</a>
 </div>
 </div>
 </nav>
@@ -221,6 +240,21 @@ ABOUT SECTION
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================
+GROWGUT PRODUCT SECTION (PLACEHOLDER)
+============================================================ -->
+<section class="section" id="growgut" style="background:#F7F9FF;padding:var(--s24) 0;">
+<div class="container">
+<div class="text-center animate-on-scroll" style="max-width:600px;margin:0 auto;">
+<div class="section-label section-label--blue" style="margin-bottom:var(--s5);">
+<span class="dot"></span> Product · GrowGut
+</div>
+<h2 class="text-h2" style="margin-bottom:var(--s5);"><span class="text-gradient-purple">GrowGut</span> — Coming Soon</h2>
+<p class="text-body text-muted">Innovative pediatric nutrition and growth monitoring solution. Stay tuned for updates.</p>
 </div>
 </div>
 </section>
@@ -1058,6 +1092,25 @@ WHO AMR-Aligned
 <p>Backed by <span>TISS · Pfizer INDovation · C-CAMP · CARB-X · Startup India</span> · Seeking Series A · investor@babycue.in</p>
 </div>
 </footer>
+
+<!-- ============================================================
+PARTNER SECTION
+============================================================ -->
+<section class="section" id="partner" style="background:#FFFFFF;padding:var(--s24) 0;display:none;">
+<div class="container">
+<div class="text-center animate-on-scroll" style="max-width:700px;margin:0 auto;">
+<div class="section-label section-label--blue" style="margin-bottom:var(--s5);">
+<span class="dot"></span> Partnership Opportunities
+</div>
+<h2 class="text-h2" style="margin-bottom:var(--s5);">Partner With <span class="text-gradient-purple">BabyCue</span></h2>
+<p class="text-body text-muted" style="margin-bottom:var(--s8);">Join us in revolutionizing pediatric healthcare. We're seeking strategic partners, investors, and collaborators to scale our impact globally.</p>
+<div class="flex gap-4 flex-wrap" style="justify-content:center;">
+<a href="mailto:investor@babycue.in" class="btn btn-primary btn-lg">Contact Partnerships</a>
+<a href="#research" class="btn btn-outline btn-lg">View Research</a>
+</div>
+</div>
+</div>
+</section>
 
 <!-- ============================================================
 AI CHATBOT BUBBLE
