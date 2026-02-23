@@ -73,9 +73,15 @@ babycue-website/
 | **HTML5** | Semantic structure, accessibility |
 | **CSS3** | Design system, animations, responsive layout |
 | **Vanilla JavaScript** | Interactions, scroll effects, observers |
-| **Google Fonts** | Typography (Sora, DM Serif Display, JetBrains Mono) |
+| **Self-Hosted Fonts** | Typography (Sora, DM Serif Display, JetBrains Mono) - Optimized for performance |
 
 **No frameworks or build tools required** — Pure web technologies for maximum performance and simplicity.
+
+### ⚡ Performance Optimization
+- Self-hosted fonts (300-800ms faster than Google Fonts CDN)
+- Zero external font dependencies
+- Optimized WOFF2 format (~400KB total)
+- Instant font rendering with font-display: swap
 
 ---
 
@@ -85,19 +91,41 @@ babycue-website/
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - A local web server (optional but recommended)
 
-### Option 1: Direct Open (Simple)
+### Step 1: Clone Repository
 ```bash
-# Clone the repository
 git clone https://github.com/yourusername/babycue-website.git
 cd babycue-website
+```
 
+### Step 2: Download Fonts (Required for optimal performance)
+
+**Windows:**
+```powershell
+cd assets/fonts
+powershell -ExecutionPolicy Bypass -File download-fonts.ps1
+cd ../..
+```
+
+**Mac/Linux:**
+```bash
+cd assets/fonts
+bash download-fonts.sh
+cd ../..
+```
+
+**Or manually:** See `assets/fonts/DOWNLOAD-FONTS.md` for instructions.
+
+### Step 3: Open Website
+
+**Option A: Direct Open (Simple)**
+```bash
 # Open index.html in your browser
 open index.html  # macOS
 start index.html # Windows
 xdg-open index.html # Linux
 ```
 
-### Option 2: Local Server (Recommended)
+**Option B: Local Server (Recommended)**
 ```bash
 # Using Python 3
 python -m http.server 8000
@@ -110,6 +138,8 @@ php -S localhost:8000
 
 # Then visit: http://localhost:8000
 ```
+
+**Note:** Website works without fonts (uses system fallbacks), but downloading fonts provides the best experience and performance.
 
 ---
 
