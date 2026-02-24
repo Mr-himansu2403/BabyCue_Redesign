@@ -1890,6 +1890,42 @@ border: none;
 .chat-send:hover { transform: scale(1.1); }
 
 /* ============================================================
+APPROXIMATE CONTENT INDICATOR (≈ SYMBOL)
+============================================================ */
+.approx-indicator {
+position: relative;
+}
+
+.approx-indicator::after {
+content: '≈';
+position: absolute;
+top: 0;
+right: -24px;
+font-size: 14px;
+font-weight: 400;
+color: var(--ink-300);
+opacity: 0.4;
+font-family: var(--font-body);
+}
+
+/* For section titles with approximate data */
+.section-approx {
+position: relative;
+display: inline-block;
+}
+
+.section-approx::after {
+content: '≈';
+position: absolute;
+top: -8px;
+right: -20px;
+font-size: 12px;
+font-weight: 400;
+color: var(--violet-400);
+opacity: 0.5;
+}
+
+/* ============================================================
 TEAM SECTION - PREMIUM MEDICAL CARDS WITH LINKEDIN
 ============================================================ */
 .team-grid {
