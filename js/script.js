@@ -5,6 +5,53 @@ nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
 // ============================================================
+// SECTION TOGGLE SYSTEM (INSTANT SWITCH, NO SCROLL)
+// ============================================================
+
+// Get all page sections and nav links
+const pageSections = document.querySelectorAll('.page-section');
+const navLinksToggle = document.querySelectorAll('.nav-link[href^="#"]');
+
+// Function to show specific section
+function showSection(sectionId) {
+// Remove active class from all sections
+pageSections.forEach(section => {
+section.classList.remove('active');
+});
+
+// Add active class to target section
+const targetSection = document.getElementById(sectionId);
+if (targetSection) {
+targetSection.classList.add('active');
+}
+
+// Update active nav link
+navLinksToggle.forEach(link => {
+link.classList.remove('active');
+if (link.getAttribute('href') === `#${sectionId}`) {
+link.classList.add('active');
+}
+});
+
+// Scroll to top of page instantly
+window.scrollTo(0, 0);
+}
+
+// Add click event to all nav links
+navLinksToggle.forEach(link => {
+link.addEventListener('click', (e) => {
+e.preventDefault();
+const targetId = link.getAttribute('href').substring(1);
+showSection(targetId);
+});
+});
+
+// Initialize: Show home section on load
+window.addEventListener('load', () => {
+showSection('home');
+});
+
+// ============================================================
 // ENHANCED NAVIGATION FUNCTIONALITY
 // ============================================================
 
@@ -39,32 +86,6 @@ dropdown.classList.toggle('active');
 }
 });
 });
-
-// Active link highlighting on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinksAll = document.querySelectorAll('.nav-link[href^="#"]');
-
-function highlightActiveLink() {
-const scrollY = window.pageYOffset;
-
-sections.forEach(section => {
-const sectionHeight = section.offsetHeight;
-const sectionTop = section.offsetTop - 100;
-const sectionId = section.getAttribute('id');
-
-if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-navLinksAll.forEach(link => {
-link.classList.remove('active');
-if (link.getAttribute('href') === `#${sectionId}`) {
-link.classList.add('active');
-}
-});
-}
-});
-}
-
-window.addEventListener('scroll', highlightActiveLink);
-window.addEventListener('load', highlightActiveLink);
 
 // ============================================================
 // EXISTING FUNCTIONALITY (PRESERVED)
@@ -111,19 +132,4 @@ bar.style.animationDelay = `${i * 0.15}s`;
 // Step animations
 document.querySelectorAll('.step-item').forEach((step, i) => {
 step.style.animationDelay = `${i * 0.1}s`;
-});
-
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-a.addEventListener('click', e => {
-const target = document.querySelector(a.getAttribute('href'));
-if (target) {
-e.preventDefault();
-const offset = 80;
-window.scrollTo({
-top: target.getBoundingClientRect().top + window.scrollY - offset,
-behavior: 'smooth'
-});
-}
-});
 });
