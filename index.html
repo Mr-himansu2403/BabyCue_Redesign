@@ -28,16 +28,28 @@ NAVIGATION
 <ul class="nav-links" id="navLinks">
 <li><a href="#home" class="nav-link">Home</a></li>
 <li><a href="#about" class="nav-link">About</a></li>
-<li><a href="#product" class="nav-link">Product</a></li>
+<li class="nav-dropdown">
+<a href="#product" class="nav-link nav-dropdown-toggle">
+Product
+<svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" class="nav-dropdown-icon">
+<path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>
+</a>
+<ul class="nav-dropdown-menu">
+<li><a href="#growgut" class="nav-dropdown-item">GrowGut</a></li>
+<li><a href="#diacue" class="nav-dropdown-item">DiaCue</a></li>
+<li><a href="#gibud" class="nav-dropdown-item">GI-BUD</a></li>
+</ul>
+</li>
 <li><a href="#technology" class="nav-link">Technology</a></li>
 <li><a href="#achievements" class="nav-link">Achievements</a></li>
 <li><a href="#contact" class="nav-link">Contact</a></li>
 <li class="nav-cta-mobile">
-<a href="#contact" class="btn btn-primary btn-block">Partner With Us</a>
+<a href="#partner" class="btn btn-primary btn-block">Partner With Us</a>
 </li>
 </ul>
 <div class="nav-cta">
-<a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Partner With Us</a>
+<a href="#partner" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Partner With Us</a>
 </div>
 </div>
 </nav>
@@ -45,7 +57,7 @@ NAVIGATION
 <!-- ============================================================
 HOME SECTION
 ============================================================ -->
-<section class="hero" id="home">
+<section class="hero page-section active" id="home">
 <div class="hero-grid"></div>
 <div class="hero-orb hero-orb-1"></div>
 <div class="hero-orb hero-orb-2"></div>
@@ -174,7 +186,7 @@ AMR Risk: Low
 <!-- ============================================================
 ABOUT SECTION
 ============================================================ -->
-<section class="about section" id="about">
+<section class="about section page-section" id="about">
 <div class="container">
 <div class="grid-2" style="gap:var(--s16)">
 <div class="animate-on-scroll">
@@ -324,7 +336,7 @@ BabyCue combines lateral flow diagnostics, AI-driven gut health analytics, and r
 <!-- ============================================================
 PRODUCT SECTION
 ============================================================ -->
-<section id="product" style="background:#FFFFFF;">
+<section id="product" class="page-section" style="background:#FFFFFF;">
 
 <!-- ============================================================
 GROWGUT PRODUCT SECTION (PLACEHOLDER)
@@ -589,7 +601,7 @@ GI-BUD AI SECTION
 <!-- ============================================================
 TECHNOLOGY SECTION
 ============================================================ -->
-<section class="tech-section section" id="technology">
+<section class="tech-section section page-section" id="technology">
 <div class="container">
 <div class="text-center animate-on-scroll" style="max-width:600px;margin:0 auto;">
 <div class="section-label section-label--violet" style="margin-bottom:var(--s5);">
@@ -642,7 +654,7 @@ TECHNOLOGY SECTION
 <!-- ============================================================
 ACHIEVEMENTS SECTION
 ============================================================ -->
-<section id="achievements" style="background:#FFFFFF;">
+<section id="achievements" class="page-section" style="background:#FFFFFF;">
 
 <!-- ============================================================
 IMPACT & DATA VISUALIZATION
@@ -1056,7 +1068,7 @@ LIVE
 <!-- ============================================================
 CONTACT SECTION
 ============================================================ -->
-<section id="contact" style="background:#FFFFFF;">
+<section id="contact" class="page-section" style="background:#FFFFFF;">
 
 <!-- ============================================================
 CTA SECTION
@@ -1197,7 +1209,7 @@ WHO AMR-Aligned
 <!-- ============================================================
 PARTNER SECTION
 ============================================================ -->
-<section class="section" id="partner" style="background:#FFFFFF;padding:var(--s24) 0;display:none;">
+<section class="section" id="partner" style="background:#FFFFFF;padding:var(--s24) 0;">
 <div class="container">
 <div class="text-center animate-on-scroll" style="max-width:700px;margin:0 auto;">
 <div class="section-label section-label--blue" style="margin-bottom:var(--s5);">
