@@ -1,58 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="BabyCue — AI-powered pediatric diagnostics. DiaCue rapid diarrhea diagnostic kit and GI-BUD AI gut health companion. Detect Early. Protect Always.">
 <meta name="keywords" content="pediatric diagnostics, gut health, AI health, diarrhea diagnostic, child health, BabyCue, DiaCue, GI-BUD">
 <title>BabyCue · Detect Early. Protect Always.</title>
-<!-- Preload critical fonts for performance -->
+
+<script>
+// Critical JavaScript to remove no-js class immediately
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+
+// Removed loading screen - page loads directly
+</script>
+
+<!-- Performance Optimizations -->
+<meta name="theme-color" content="#6C4DFF">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+<!-- Preload critical assets -->
 <link rel="preload" href="assets/fonts/sora-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sora-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/dm-serif-display-regular.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Self-hosted fonts for optimal performance -->
+<link rel="preload" href="assets/images/Logo_BabyCue.png" as="image">
+<link rel="preload" href="css/styles.css" as="style">
+
+<!-- Preload hero images for faster LCP -->
+<link rel="preload" href="assets/images/DiaCue Box without BG.png" as="image">
+<link rel="preload" href="assets/images/diacue_without_bg.png" as="image">
+
+<!-- Resource hints for better performance -->
+<link rel="dns-prefetch" href="//play.google.com">
+<link rel="dns-prefetch" href="//growgut-product-506773688937.asia-south1.run.app">
+
+<!-- Prefetch next likely pages -->
+<link rel="prefetch" href="/products/diacue">
+<link rel="prefetch" href="/products/gibud">
+<link rel="prefetch" href="/products/growgut">
+
+<style>
+/* Self-hosted fonts for optimal performance */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/sora-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('assets/fonts/sora-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/sora-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/sora-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('assets/fonts/sora-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/dm-serif-display-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/dm-serif-display-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/jetbrains-mono-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('assets/fonts/jetbrains-mono-500.woff2') format('woff2');
+}
+</style>
+
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+<!-- Loading screen removed for direct page access -->
+
 <!-- ============================================================
 NAVIGATION
 ============================================================ -->
-<nav class="nav" id="mainNav">
+<nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
 <div class="nav-inner">
-<a href="#home" class="nav-logo">
+<!-- Left: Logo -->
+<a href="#home" class="nav-logo" aria-label="BabyCue - Go to homepage">
 <img src="assets/images/Logo_BabyCue.png" alt="BabyCue Logo" class="nav-logo-img" width="140" height="40">
 </a>
-<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu">
-<span></span>
-<span></span>
-<span></span>
-</button>
-<ul class="nav-links" id="navLinks">
-<li><a href="#home" class="nav-link">Home</a></li>
-<li><a href="#about" class="nav-link">About</a></li>
-<li class="nav-dropdown">
-<a href="#product" class="nav-link nav-dropdown-toggle">
+
+<!-- Center: Navigation Links -->
+<ul class="nav-links" id="navLinks" role="menubar" aria-label="Main menu">
+<li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+<li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+<li class="nav-dropdown" role="none">
+<a href="#product" class="nav-link nav-dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
 Product
-<svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" class="nav-dropdown-icon">
+<svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" class="nav-dropdown-icon" aria-hidden="true">
 <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 </svg>
 </a>
-<ul class="nav-dropdown-menu">
-<li><a href="#growgut" class="nav-dropdown-item">GrowGut</a></li>
-<li><a href="#diacue" class="nav-dropdown-item">DiaCue</a></li>
-<li><a href="#gibud" class="nav-dropdown-item">GI-BUD</a></li>
+<ul class="nav-dropdown-menu" role="menu" aria-label="Product submenu">
+<li role="none"><a href="/products/diacue" class="nav-dropdown-item" role="menuitem">DiaCue</a></li>
+<li role="none"><a href="/products/gibud" class="nav-dropdown-item" role="menuitem">GI-BUD</a></li>
+<li role="none"><a href="/products/growgut" class="nav-dropdown-item" role="menuitem">GrowGut</a></li>
 </ul>
 </li>
-<li><a href="#technology" class="nav-link">Technology</a></li>
-<li><a href="#achievements" class="nav-link">Achievements</a></li>
-<li><a href="#contact" class="nav-link">Contact</a></li>
-<li class="nav-cta-mobile">
-<a href="#partner" class="btn btn-primary btn-block">Partner With Us</a>
-</li>
+<li role="none"><a href="#technology" class="nav-link" role="menuitem">Technology</a></li>
+<li role="none"><a href="#achievements" class="nav-link" role="menuitem">Achievements</a></li>
+<li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
 </ul>
+
+<!-- Right: CTA Button -->
 <div class="nav-cta">
 <a href="#partner" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Partner With Us</a>
+</div>
+
+<!-- Mobile Menu Toggle -->
+<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+<span class="hamburger-line" aria-hidden="true"></span>
+<span class="hamburger-line" aria-hidden="true"></span>
+<span class="hamburger-line" aria-hidden="true"></span>
+</button>
+
+<!-- Mobile CTA -->
+<div class="nav-cta-mobile">
+<a href="#partner" class="btn btn-primary btn-block">Partner With Us</a>
 </div>
 </div>
 </nav>
@@ -60,49 +176,30 @@ Product
 <!-- ============================================================
 HOME SECTION
 ============================================================ -->
-<section class="hero page-section active" id="home">
-<div class="hero-grid"></div>
-<div class="hero-orb hero-orb-1"></div>
-<div class="hero-orb hero-orb-2"></div>
-<div class="hero-orb hero-orb-3"></div>
+<main role="main" id="main-content">
+<section class="hero page-section active" id="home" aria-labelledby="hero-heading">
+<div class="hero-grid" aria-hidden="true"></div>
+<div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+<div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+<div class="hero-orb hero-orb-3" aria-hidden="true"></div>
 
 <div class="hero-content">
 <!-- Left: Copy -->
 <div>
-<div class="hero-tag">
-<svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg>
+<div class="hero-tag" role="text" aria-label="Company tagline">
+<svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><circle cx="6" cy="6" r="6"/></svg>
 AI-Powered Pediatric Diagnostics · Bhubaneswar, India
 </div>
 
-<h1 class="hero-headline">Detect <em>Early.</em><br>Protect <em>Always.</em></h1>
+<h1 class="hero-headline" id="hero-heading">Detect <em>Early.</em><br>Protect <em>Always.</em></h1>
 
 <p class="hero-sub">BabyCue harnesses AI and rapid diagnostics to protect children from diarrheal disease — one of the leading causes of child mortality worldwide.</p>
 
-<div class="hero-actions">
-<a href="#diacue" class="btn btn-primary btn-lg">Explore DiaCue Kit<span class="btn-icon">→</span></a>
-<a href="#gibud" class="btn btn-outline btn-lg">🧠 GI-BUD AI App</a>
-</div>
-
-<div class="hero-stats">
-<div>
-<div class="hero-stat-val">10-15<span style="font-size:16px;font-weight:500">min</span></div>
-<div class="hero-stat-label">Rapid diagnosis</div>
-</div>
-<div class="hero-stat-divider"></div>
-<div>
-<div class="hero-stat-val">5+</div>
-<div class="hero-stat-label">National awards</div>
-</div>
-<div class="hero-stat-divider"></div>
-<div>
-<div class="hero-stat-val">AMR</div>
-<div class="hero-stat-label">Aligned initiative</div>
-</div>
-<div class="hero-stat-divider"></div>
-<div>
-<div class="hero-stat-val">AI</div>
-<div class="hero-stat-label">Gut health scoring</div>
-</div>
+<div class="hero-actions" role="group" aria-label="Primary actions">
+<a href="#diacue" class="btn btn-primary btn-lg" aria-describedby="diacue-description">Explore DiaCue Kit<span class="btn-icon" aria-hidden="true">→</span></a>
+<a href="#gibud" class="btn btn-outline btn-lg" aria-describedby="gibud-description">🧠 GI-BUD AI App</a>
+<div id="diacue-description" class="sr-only">Learn about our rapid diagnostic kit for pediatric diarrhea</div>
+<div id="gibud-description" class="sr-only">Discover our AI-powered gut health monitoring app</div>
 </div>
 </div>
 
@@ -111,54 +208,54 @@ AI-Powered Pediatric Diagnostics · Bhubaneswar, India
 <div class="hero-visual-card">
 <div class="dna-container">
 <!-- Animated diagnostic interface mockup -->
-<div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+<div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;" role="img" aria-label="Interactive gut health dashboard showing score of 87 and weekly hydration trend">
 <!-- Central score card -->
 <div style="background:linear-gradient(145deg,#fff,#faf5ff);border-radius:24px;padding:28px 32px;box-shadow:0 12px 40px rgba(124,58,237,0.15),0 4px 12px rgba(0,0,0,0.04);border:1px solid rgba(124,58,237,0.12);text-align:center;min-width:200px;">
-<div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--violet-700);margin-bottom:8px;">Gut Health Score</div>
-<div style="font-size:64px;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--violet-600),var(--violet-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">87</div>
-<div style="font-size:13px;color:var(--ink-400);margin-top:4px;">Healthy — No intervention needed</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--violet-700);margin-bottom:8px;" aria-label="Health metric category">Gut Health Score</div>
+<div style="font-size:64px;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--violet-600),var(--violet-400));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" aria-label="Health score: 87 out of 100">87</div>
+<div style="font-size:13px;color:var(--ink-400);margin-top:4px;" role="status" aria-label="Health status">Healthy — No intervention needed</div>
 
 <!-- Mini bar chart -->
-<div style="margin-top:20px;display:flex;align-items:flex-end;gap:5px;height:40px;justify-content:center;">
-<div style="width:12px;height:30%;background:linear-gradient(var(--violet-500),var(--violet-600));border-radius:3px;opacity:0.6;animation:barGrow 2s 0s ease-in-out infinite alternate;"></div>
-<div style="width:12px;height:55%;background:linear-gradient(var(--violet-500),var(--violet-600));border-radius:3px;opacity:0.7;animation:barGrow 2s 0.3s ease-in-out infinite alternate;"></div>
-<div style="width:12px;height:70%;background:linear-gradient(var(--violet-500),var(--violet-400));border-radius:3px;opacity:0.8;animation:barGrow 2s 0.6s ease-in-out infinite alternate;"></div>
-<div style="width:12px;height:90%;background:linear-gradient(var(--violet-400),var(--violet-300));border-radius:3px;animation:barGrow 2s 0.9s ease-in-out infinite alternate;"></div>
-<div style="width:12px;height:75%;background:linear-gradient(var(--violet-500),var(--violet-400));border-radius:3px;opacity:0.85;animation:barGrow 2s 1.2s ease-in-out infinite alternate;"></div>
-<div style="width:12px;height:60%;background:linear-gradient(var(--violet-500),var(--violet-600));border-radius:3px;opacity:0.7;animation:barGrow 2s 1.5s ease-in-out infinite alternate;"></div>
-<div style="width:12px;height:85%;background:linear-gradient(var(--violet-400),var(--violet-300));border-radius:3px;opacity:0.9;animation:barGrow 2s 1.8s ease-in-out infinite alternate;"></div>
+<div style="margin-top:20px;display:flex;align-items:flex-end;gap:5px;height:40px;justify-content:center;" role="img" aria-label="Weekly hydration trend chart showing 7 days of data">
+<div style="width:12px;height:30%;background:linear-gradient(var(--violet-500),var(--violet-600));border-radius:3px;opacity:0.6;animation:barGrow 2s 0s ease-in-out infinite alternate;" aria-label="Day 1: 30%"></div>
+<div style="width:12px;height:55%;background:linear-gradient(var(--violet-500),var(--violet-600));border-radius:3px;opacity:0.7;animation:barGrow 2s 0.3s ease-in-out infinite alternate;" aria-label="Day 2: 55%"></div>
+<div style="width:12px;height:70%;background:linear-gradient(var(--violet-500),var(--violet-400));border-radius:3px;opacity:0.8;animation:barGrow 2s 0.6s ease-in-out infinite alternate;" aria-label="Day 3: 70%"></div>
+<div style="width:12px;height:90%;background:linear-gradient(var(--violet-400),var(--violet-300));border-radius:3px;animation:barGrow 2s 0.9s ease-in-out infinite alternate;" aria-label="Day 4: 90%"></div>
+<div style="width:12px;height:75%;background:linear-gradient(var(--violet-500),var(--violet-400));border-radius:3px;opacity:0.85;animation:barGrow 2s 1.2s ease-in-out infinite alternate;" aria-label="Day 5: 75%"></div>
+<div style="width:12px;height:60%;background:linear-gradient(var(--violet-500),var(--violet-600));border-radius:3px;opacity:0.7;animation:barGrow 2s 1.5s ease-in-out infinite alternate;" aria-label="Day 6: 60%"></div>
+<div style="width:12px;height:85%;background:linear-gradient(var(--violet-400),var(--violet-300));border-radius:3px;opacity:0.9;animation:barGrow 2s 1.8s ease-in-out infinite alternate;" aria-label="Day 7: 85%"></div>
 </div>
 <div style="font-size:10px;color:var(--ink-300);margin-top:6px;">Weekly hydration trend</div>
 </div>
 
 <!-- Floating pills -->
-<div class="hero-data-pill pill-1">
-<div class="hero-data-pill-dot"></div>
+<div class="hero-data-pill pill-1" role="status" aria-label="DiaCue test result">
+<div class="hero-data-pill-dot" aria-hidden="true"></div>
 DiaCue: Negative ✓
 </div>
-<div class="hero-data-pill pill-2">
-<div class="hero-data-pill-dot"></div>
+<div class="hero-data-pill pill-2" role="status" aria-label="Hydration level">
+<div class="hero-data-pill-dot" aria-hidden="true"></div>
 Hydration: 94%
 </div>
-<div class="hero-data-pill pill-3">
-<div class="hero-data-pill-dot"></div>
+<div class="hero-data-pill pill-3" role="status" aria-label="Antimicrobial resistance risk">
+<div class="hero-data-pill-dot" aria-hidden="true"></div>
 AMR Risk: Low
 </div>
 </div>
 </div>
 
 <!-- Bottom info row -->
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(0,0,0,0.06);">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(0,0,0,0.06);" role="group" aria-label="Technology features">
 <div style="text-align:center;">
-<div style="font-size:18px;font-weight:700;color:var(--violet-700);">🔬</div>
+<div style="font-size:18px;font-weight:700;color:var(--violet-700);" aria-hidden="true">🔬</div>
 <div style="font-size:11px;color:var(--ink-400);margin-top:2px;">Diagnostic</div>
 </div>
 <div style="text-align:center;">
-<div style="font-size:18px;font-weight:700;color:var(--violet-600);">🤖</div>
+<div style="font-size:18px;font-weight:700;color:var(--violet-600);" aria-hidden="true">🤖</div>
 <div style="font-size:11px;color:var(--ink-400);margin-top:2px;">AI Analysis</div>
 </div>
 <div style="text-align:center;">
-<div style="font-size:18px;font-weight:700;color:#059669;">🛡️</div>
+<div style="font-size:18px;font-weight:700;color:#059669;" aria-hidden="true">🛡️</div>
 <div style="font-size:11px;color:var(--ink-400);margin-top:2px;">Protection</div>
 </div>
 </div>
@@ -166,8 +263,31 @@ AMR Risk: Low
 </div>
 </div>
 
+<!-- Stats Section - Full Width -->
+<div class="hero-stats" role="group" aria-label="Key statistics">
+<div>
+<div class="hero-stat-val" aria-label="Diagnosis time: 10 to 15 minutes">10-15<span style="font-size:16px;font-weight:500">min</span></div>
+<div class="hero-stat-label">Rapid diagnosis</div>
+</div>
+<div class="hero-stat-divider" aria-hidden="true"></div>
+<div>
+<div class="hero-stat-val" aria-label="5 or more national awards">5+</div>
+<div class="hero-stat-label">National awards</div>
+</div>
+<div class="hero-stat-divider" aria-hidden="true"></div>
+<div>
+<div class="hero-stat-val" aria-label="Antimicrobial resistance aligned">AMR</div>
+<div class="hero-stat-label">Aligned initiative</div>
+</div>
+<div class="hero-stat-divider" aria-hidden="true"></div>
+<div>
+<div class="hero-stat-val" aria-label="Artificial intelligence powered">AI</div>
+<div class="hero-stat-label">Gut health scoring</div>
+</div>
+</div>
+
 <!-- Awards Ticker -->
-<div class="awards-ticker">
+<div class="awards-ticker" role="marquee" aria-label="Awards and recognition ticker">
 <div class="ticker-track" id="ticker">
 <div class="ticker-item">🏆 <strong>iPreneur TISS</strong> — 1st Prize Social Venture</div>
 <div class="ticker-item">🧬 <strong>Pfizer INDovation</strong> — Top Innovator Award</div>
@@ -176,15 +296,16 @@ AMR Risk: Low
 <div class="ticker-item">🏥 <strong>NHM</strong> — Healthcare Innovation</div>
 <div class="ticker-item">🤝 <strong>WHO AMR</strong> — Aligned Initiative</div>
 <!-- Duplicate for seamless loop -->
-<div class="ticker-item">🏆 <strong>iPreneur TISS</strong> — 1st Prize Social Venture</div>
-<div class="ticker-item">🧬 <strong>Pfizer INDovation</strong> — Top Innovator Award</div>
-<div class="ticker-item">🔬 <strong>C-CAMP / CARB-X</strong> — AMR Quest Winner</div>
-<div class="ticker-item">🌟 <strong>Startup India</strong> — Recognized Startup</div>
-<div class="ticker-item">🏥 <strong>NHM</strong> — Healthcare Innovation</div>
-<div class="ticker-item">🤝 <strong>WHO AMR</strong> — Aligned Initiative</div>
+<div class="ticker-item" aria-hidden="true">🏆 <strong>iPreneur TISS</strong> — 1st Prize Social Venture</div>
+<div class="ticker-item" aria-hidden="true">🧬 <strong>Pfizer INDovation</strong> — Top Innovator Award</div>
+<div class="ticker-item" aria-hidden="true">🔬 <strong>C-CAMP / CARB-X</strong> — AMR Quest Winner</div>
+<div class="ticker-item" aria-hidden="true">🌟 <strong>Startup India</strong> — Recognized Startup</div>
+<div class="ticker-item" aria-hidden="true">🏥 <strong>NHM</strong> — Healthcare Innovation</div>
+<div class="ticker-item" aria-hidden="true">🤝 <strong>WHO AMR</strong> — Aligned Initiative</div>
 </div>
 </div>
 </section>
+</main>
 
 <!-- ============================================================
 ABOUT SECTION
@@ -541,7 +662,7 @@ Founded in 2022 in Bhubaneswar, Odisha, our founding team combined expertise in 
 <p class="team-bio">Co-founder & CEO, Sleepiz AG, Zurich, Switzerland. HealthTech entrepreneur and investor, providing strategic guidance and funding.</p>
 </div>
 </div>
-<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="team-linkedin" aria-label="LinkedIn Profile">
+<a href="https://www.linkedin.com/company/babycue-pvt-ltd/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-linkedin" aria-label="BabyCue LinkedIn">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
 </svg>
@@ -874,44 +995,22 @@ PRODUCT 2: GI-BUD AI APP - REDESIGNED
 
 <!-- 3-Column Layout for Desktop -->
 <div class="gibud-main-layout animate-on-scroll">
-<!-- Left Column: Smartphone Mockup -->
+<!-- Left Column: GI-BUD App Promotional Image -->
 <div class="gibud-phone-section">
-<div class="smartphone-mockup">
-<div class="phone-frame">
-<div class="phone-screen">
-<div class="app-dashboard">
-<div class="app-header">
-<span class="app-logo">GI-BUD</span>
-<div class="status-dot"></div>
-</div>
-<div class="dashboard-main">
-<div class="health-score-display">
-<div class="score-number">87</div>
-<div class="score-text">Gut Health Score</div>
-<div class="score-status">Healthy — No intervention needed</div>
-</div>
-<div class="metrics-display">
-<div class="metric-item">
-<div class="metric-value positive">Good</div>
-<div class="metric-name">Hydration</div>
-</div>
-<div class="metric-item">
-<div class="metric-value negative">Negative</div>
-<div class="metric-name">DiaCue Test</div>
-</div>
-</div>
-<div class="trend-chart">
-<div class="chart-header">7-Day Trend</div>
-<div class="chart-bars">
-<div class="bar" style="height:45%"></div>
-<div class="bar" style="height:65%"></div>
-<div class="bar" style="height:55%"></div>
-<div class="bar" style="height:80%"></div>
-<div class="bar" style="height:75%"></div>
-<div class="bar" style="height:90%"></div>
-<div class="bar active" style="height:95%"></div>
-</div>
-</div>
+<div class="gibud-promo-container">
+<img src="assets/images/gibud-app-promo.png" alt="GI-BUD App - Gut Health Score Dashboard showing score of 87, AI Tongue Analysis, calorie tracking, and dietitian video call features" class="gibud-promo-image" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+<!-- Fallback content if image fails to load -->
+<div class="gibud-promo-fallback" style="display: none;">
+<div class="fallback-phone">
+<div class="fallback-screen">
+<div class="fallback-header">GI-BUD</div>
+<div class="fallback-score">87</div>
+<div class="fallback-label">Gut Health Score</div>
+<div class="fallback-status">Healthy — No intervention needed</div>
+<div class="fallback-features">
+<div class="fallback-feature">👅 AI Tongue Analysis</div>
+<div class="fallback-feature">📊 Nutrition Tracking</div>
+<div class="fallback-feature">👩‍⚕️ Dietitian Calls</div>
 </div>
 </div>
 </div>
@@ -923,24 +1022,24 @@ PRODUCT 2: GI-BUD AI APP - REDESIGNED
 <div class="gibud-features-section">
 <div class="features-grid-2x2">
 <div class="feature-card-glass">
-<div class="feature-icon">📸</div>
-<h4 class="feature-title">DiaCue Result Scanner</h4>
-<p class="feature-description">AI reads and interprets diagnostic test results instantly.</p>
-</div>
-<div class="feature-card-glass">
-<div class="feature-icon">💧</div>
-<h4 class="feature-title">Hydration Analysis</h4>
-<p class="feature-description">Computer vision assesses dehydration levels.</p>
+<div class="feature-icon">👅</div>
+<h4 class="feature-title">AI Tongue Analysis</h4>
+<p class="feature-description">Advanced computer vision analyzes tongue images for health indicators and dehydration assessment.</p>
 </div>
 <div class="feature-card-glass">
 <div class="feature-icon">📊</div>
-<h4 class="feature-title">Personalized Gut Score</h4>
-<p class="feature-description">Dynamic health scoring with trend analysis.</p>
+<h4 class="feature-title">Nutrition Tracking</h4>
+<p class="feature-description">Smart calorie and macro tracking (Protein, Carbs, Fat) with personalized recommendations.</p>
 </div>
 <div class="feature-card-glass">
-<div class="feature-icon">🔔</div>
-<h4 class="feature-title">Predictive Alerts</h4>
-<p class="feature-description">Early warning system for pediatric gut health risks.</p>
+<div class="feature-icon">👩‍⚕️</div>
+<h4 class="feature-title">Dietitian Video Calls</h4>
+<p class="feature-description">Connect with certified pediatric dietitians for personalized gut health consultations.</p>
+</div>
+<div class="feature-card-glass">
+<div class="feature-icon">🎯</div>
+<h4 class="feature-title">Gut Health Score</h4>
+<p class="feature-description">Real-time health scoring with 7-day trend analysis and predictive insights.</p>
 </div>
 </div>
 </div>
@@ -1962,8 +2061,8 @@ CONTACT FORM SECTION
 <!-- Social Links -->
 <div style="margin-top:var(--s8);padding-top:var(--s6);border-top:1px solid rgba(0,0,0,0.06);">
 <div style="font-size:13px;font-weight:600;color:var(--ink-700);margin-bottom:var(--s4);">Follow Us</div>
-<div style="display:flex;gap:12px;">
-<a href="#" class="social-icon-btn" aria-label="LinkedIn">
+<div class="social-icons-container">
+<a href="https://www.linkedin.com/company/babycue-pvt-ltd/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="BabyCue LinkedIn">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
 </svg>
@@ -2216,7 +2315,7 @@ WHO AMR-Aligned
 <div class="footer-bottom-left">© 2026 BabyCue Pvt. Ltd. All rights reserved. · Made with ❤️ for children's health in India.</div>
 <div class="footer-socials">
 <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
-<a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+<a href="https://www.linkedin.com/company/babycue-pvt-ltd/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="BabyCue LinkedIn">in</a>
 <a href="#" class="footer-social" aria-label="YouTube">▶</a>
 </div>
 </div>
@@ -2252,6 +2351,102 @@ PARTNER SECTION
 <!-- ============================================================
 JAVASCRIPT
 ============================================================ -->
+<!-- Performance and Loading Optimization Scripts -->
+<script>
+// Critical performance optimizations
+(function() {
+  // Optimize images that don't have lazy loading
+  const images = document.querySelectorAll('img:not([loading])');
+  images.forEach(img => {
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+  });
+
+  // Preload critical resources
+  const criticalImages = [
+    'assets/images/Logo_BabyCue.png'
+  ];
+  
+  criticalImages.forEach(src => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = src;
+    document.head.appendChild(link);
+  });
+
+  // Optimize font loading
+  if ('fonts' in document) {
+    document.fonts.ready.then(() => {
+      document.body.classList.add('fonts-loaded');
+    });
+  }
+
+  // Service Worker for caching (if supported)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {
+        // Service worker registration failed, continue without it
+      });
+    });
+  }
+
+  // Optimize third-party scripts loading
+  const deferredScripts = [];
+  
+  // Load non-critical scripts after page load
+  window.addEventListener('load', () => {
+    deferredScripts.forEach(script => {
+      const scriptElement = document.createElement('script');
+      scriptElement.src = script.src;
+      scriptElement.async = true;
+      document.head.appendChild(scriptElement);
+    });
+  });
+
+  // Intersection Observer for animations (performance optimization)
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  if (animatedElements.length > 0) {
+    const animationObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          animationObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    animatedElements.forEach(el => animationObserver.observe(el));
+    
+    // Fallback: Show all animations after 3 seconds if observer fails
+    setTimeout(() => {
+      animatedElements.forEach(el => {
+        if (!el.classList.contains('in-view')) {
+          el.classList.add('in-view');
+        }
+      });
+    }, 3000);
+  }
+  
+  // Final safety check: Ensure all content is visible after page load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      // Force show any hidden animated elements
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        if (getComputedStyle(el).opacity === '0') {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    }, 1000);
+  });
+})();
+</script>
+
 <script src="js/script.js" defer></script>
 
 </body>
