@@ -97,7 +97,7 @@ self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
     event.waitUntil(
       // Perform background tasks
-      console.log('Background sync completed')
+      // Background sync completed
     );
   }
 });

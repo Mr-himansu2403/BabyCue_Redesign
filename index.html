@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
 <meta name="description" content="BabyCue — AI-powered pediatric diagnostics. DiaCue rapid diarrhea diagnostic kit and GI-BUD AI gut health companion. Detect Early. Protect Always.">
 <meta name="keywords" content="pediatric diagnostics, gut health, AI health, diarrhea diagnostic, child health, BabyCue, DiaCue, GI-BUD">
 <title>BabyCue · Detect Early. Protect Always.</title>
@@ -117,10 +121,25 @@ document.documentElement.classList.add('js');
 
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="css/styles.css">
+
+<!-- EmailJS for contact form -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+<script defer>
+  // Initialize EmailJS when loaded
+  window.addEventListener('load', function() {
+    if (typeof emailjs !== 'undefined') {
+      // EmailJS initialization - configure with your public key
+      emailjs.init('contact_service_key');
+    }
+  });
+</script>
 </head>
 <body>
 
 <!-- Loading screen removed for direct page access -->
+
+<!-- Scroll Progress Indicator -->
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ============================================================
 NAVIGATION
@@ -129,7 +148,7 @@ NAVIGATION
 <div class="nav-inner">
 <!-- Left: Logo -->
 <a href="#home" class="nav-logo" aria-label="BabyCue - Go to homepage">
-<img src="assets/images/Logo_BabyCue.png" alt="BabyCue Logo" class="nav-logo-img" width="140" height="40">
+<img src="assets/images/Logo_BabyCue.png" alt="BabyCue Logo" class="nav-logo-img" width="140" height="40" loading="eager">
 </a>
 
 <!-- Center: Navigation Links -->
@@ -660,15 +679,17 @@ Founded in 2022 in Bhubaneswar, Odisha, our founding team combined expertise in 
 <h3 class="team-name">Dr. Soumya Sunder Dash</h3>
 <div class="team-designation">Mentor cum Investor</div>
 <p class="team-bio">Co-founder & CEO, Sleepiz AG, Zurich, Switzerland. HealthTech entrepreneur and investor, providing strategic guidance and funding.</p>
+<div class="team-specialization">
+<span class="team-tag">HealthTech</span>
+<span class="team-tag">Investment</span>
+<span class="team-tag">Strategy</span>
 </div>
 </div>
-<a href="https://www.linkedin.com/company/babycue-pvt-ltd/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="team-linkedin" aria-label="BabyCue LinkedIn">
+<a href="https://www.linkedin.com/in/soumya-sunder-dash/" target="_blank" rel="noopener noreferrer" class="team-linkedin" aria-label="LinkedIn Profile - Dr. Soumya Sunder Dash">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
 </svg>
 </a>
-</div>
-</div>
 </div>
 </div>
 
@@ -849,9 +870,6 @@ We're always looking for passionate individuals who want to make a difference in
 <a href="#partner" class="btn btn-outline">Partner With Us</a>
 </div>
 </div>
-</div>
-</div>
-
 </div>
 </section>
 
@@ -2082,15 +2100,15 @@ CONTACT FORM SECTION
 </div>
 
 <!-- Right Side: Contact Form -->
-<div class="contact-form-card">
-<form id="contactForm" class="contact-form" novalidate>
+<div class="contact-form-card contact-container">
+<form action="https://formspree.io/f/xaqppnjy" method="POST" id="contactForm" class="contact-form" novalidate>
 <!-- Name Field -->
 <div class="form-group">
 <label for="fullName" class="form-label">Full Name <span class="required">*</span></label>
 <input 
 type="text" 
 id="fullName" 
-name="fullName" 
+name="name" 
 class="form-input" 
 placeholder="Enter your full name"
 required
@@ -2122,7 +2140,7 @@ type="tel"
 id="phone" 
 name="phone" 
 class="form-input" 
-placeholder="+91 XXXXX XXXXX"
+placeholder="+91XXXXXXXXXX"
 required
 aria-required="true"
 >
@@ -2140,11 +2158,11 @@ required
 aria-required="true"
 >
 <option value="" disabled selected>Select a reason</option>
-<option value="general">General Inquiry</option>
-<option value="product">Product Information</option>
-<option value="support">Technical Support</option>
-<option value="partnership">Partnership</option>
-<option value="other">Other</option>
+<option value="General Inquiry">General Inquiry</option>
+<option value="Product Information">Product Information</option>
+<option value="Technical Support">Technical Support</option>
+<option value="Partnership">Partnership</option>
+<option value="Other">Other</option>
 </select>
 <span class="form-error" id="reasonError"></span>
 </div>
@@ -2166,7 +2184,7 @@ aria-required="true"
 
 <!-- Submit Button -->
 <button type="submit" class="btn-submit" id="submitBtn">
-<span class="btn-submit-text">Send Message</span>
+<span class="btn-submit-text">Send Message ✈</span>
 <svg class="btn-submit-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <line x1="22" y1="2" x2="11" y2="13"></line>
 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -2352,7 +2370,7 @@ PARTNER SECTION
 JAVASCRIPT
 ============================================================ -->
 <!-- Performance and Loading Optimization Scripts -->
-<script>
+<script defer>
 // Critical performance optimizations
 (function() {
   // Optimize images that don't have lazy loading
