@@ -1345,8 +1345,8 @@ ACCESSIBILITY PREFERENCES SUPPORT
   }
   
   .ticker-track {
-    animation: none;
-    transform: none;
+    animation: ticker-smooth 80s linear infinite;
+    animation-direction: reverse;
   }
   
   .awards-ticker {
@@ -8773,11 +8773,12 @@ mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparen
 
 .ticker-track {
 animation: ticker-smooth 40s linear infinite;
+animation-direction: reverse;
 }
 
 @keyframes ticker-smooth {
-0% { transform: translateX(-50%); }
-100% { transform: translateX(0); }
+0% { transform: translateX(0%); }
+100% { transform: translateX(-50%); }
 }
 
 .ticker-item {
