@@ -8776,8 +8776,8 @@ animation: ticker-smooth 40s linear infinite;
 }
 
 @keyframes ticker-smooth {
-0% { transform: translateX(0); }
-100% { transform: translateX(-50%); }
+0% { transform: translateX(-50%); }
+100% { transform: translateX(0); }
 }
 
 .ticker-item {
