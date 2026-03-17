@@ -90,7 +90,7 @@ Get your keys from: https://emailjs.com
 
 ### DiaCue
 - **Type:** Rapid Diarrhea Diagnostic Kit
-- **Speed:** 10-15 minutes
+- **Speed:** 15-20 minutes
 - **Accuracy:** 96% sensitivity, 94% specificity
 - **Features:** No lab required, home-based collection, ambient storage
 
