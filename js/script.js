@@ -2624,10 +2624,10 @@ class AccessibilityPreferencesManager {
       window.lazyImageLoader.disableAnimations = true;
     }
 
-    // Stop ticker animation
+    // Stop ticker animation - but allow slower version for reduced motion
     const ticker = document.getElementById('ticker');
     if (ticker) {
-      ticker.style.animation = 'none';
+      ticker.style.animation = 'ticker-smooth 80s linear infinite reverse';
     }
 
     // Loading screen removed - no animations to stop
@@ -8358,6 +8358,20 @@ document.addEventListener('DOMContentLoaded', () => {
         achievementsGallery.addEventListener('mouseleave', () => {
             achievementsGallery.style.animationPlayState = 'running';
         });
+    }
+    
+    // Initialize ticker animation
+    const ticker = document.getElementById('ticker');
+    if (ticker) {
+        // Force the ticker animation to start
+        ticker.style.animation = 'ticker-smooth 40s linear infinite reverse';
+        ticker.style.animationPlayState = 'running';
+        
+        // Check if reduced motion is preferred and adjust accordingly
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            ticker.style.animation = 'ticker-smooth 80s linear infinite reverse';
+        }
+    }
         
         // Ensure animation never stops - restart if needed
         setInterval(() => {
