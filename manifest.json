@@ -1,0 +1,17 @@
+{
+  "name": "BabyCue · Detect Early. Protect Always.",
+  "short_name": "BabyCue",
+  "description": "Comprehensive digestive health solutions through innovative diagnostics and AI insights.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6C4DFF",
+  "icons": [
+    {
+      "src": "assets/images/Logo_BabyCue.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
